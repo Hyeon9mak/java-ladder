@@ -40,4 +40,13 @@ class PlayerNameTest {
             .isExactlyInstanceOf(IllegalArgumentException.class)
             .hasMessage("플레이어 이름은 1자 이상 5자 이하만 가능합니다.");
     }
+
+    @DisplayName("플레이어 이름 동등성 테스트")
+    @Test
+    void playerNameEqualsTest() {
+        String value = "현구막";
+        PlayerName firstName = new PlayerName(value);
+        PlayerName secondName = new PlayerName(value);
+        assertThat(firstName).isEqualTo(secondName);
+    }
 }
