@@ -1,5 +1,6 @@
 package ladder.controller;
 
+import ladder.domain.Players;
 import ladder.view.InputView;
 import ladder.view.OutputView;
 
@@ -11,5 +12,10 @@ public class LadderController {
     public LadderController(InputView inputView, OutputView outputView) {
         this.inputView = inputView;
         this.outputView = outputView;
+    }
+
+
+    public void play() {
+        Players players = Players.of(inputView.inputPlayerNames());
     }
 }
